@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SpaceTyper</title>
+		<link rel="stylesheet" href="./css/main.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- <script src="./js/index.js" type="module"></script> -->
+	</head>
+	<body>
+		<div class="app">
+			<!-- BACKGROUND RENDER CANVAS -->
+			<canvas id="Background"></canvas>
+			<!--    GAME RENDER CANVAS    -->
+			<canvas id="Game"></canvas>
+
+			<div class="ui">
+				<!-- #region Top screen stats bar-->
+				<div class="top-panel">
+					<div class="stat">
+						<div class="stat_label">Score</div>
+						<div class="stat_value" link="score">99999999999</div>
+					</div>
+					<div class="stat">
+						<div class="stat_label">Time</div>
+						<div class="stat_value" link="time">0</div>
+					</div>
+					<div class="stat">
+						<div class="stat_label">Lives</div>
+						<div class="stat_value" link="lives">0</div>
+					</div>
+				</div>
+				<!-- #endregion -->
+				<!-- #region Bottom screen panel-->
+				<div class="bottom-panel">
+					<!-- #region Prompt-->
+					<div class="prompt_container">
+						<div class="prompt_text" id="Prompt">Start typing...</div>
+						<div class="prompt_line"></div>
+					</div>
+					<!-- #endregion -->
+					<!-- #region Bottom nav-->
+					<div class="bottom-bar">
+						<div class="bottom_left">
+							<span class="button" action="modal_changelog">SpaceTyper v0.2</span>
+						</div>
+						<div class="bottom_middle">
+							<span class="button" action="modal_scores">Scores</span>
+							<span class="button" action="modal_statistics">Statistics</span>
+							<span class="button" action="modal_settings">Settings</span>
+							<span class="button" action="modal_howtoplay">How to play?</span>
+						</div>
+						<div class="bottom_right">
+							<span class="button" action="goto_github">GitHub</span>
+						</div>
+					</div>
+					<!-- #endregion -->
+				</div>
+				<!-- #endregion -->
+			</div>
+			<div class="modal_background" display="none">
+				<!-- #region Modal_changelog-->
+				<div class="modal_container" id="modal_changelog">
+					<div class="modal_label">Change log</div>
+					<div class="modal_separator"></div>
+
+					<div class="modal_buttons">
+						<div class="button" action="modal_none">Close</div>
+					</div>
+				</div>
+				<!-- #endregion -->
+				<!-- #region Modal_score-->
+				<div class="modal_container" id="modal_scores">
+					<div class="modal_label">Scores</div>
+					<div class="modal_separator"></div>
+
+					<div class="modal_buttons">
+						<div class="button" action="scores_gamemode0">Gamemode1</div>
+						<div class="button" action="scores_gamemode1">Gamemode2</div>
+						<div class="button" action="scores_gamemode2">Gamemode3</div>
+					</div>
+
+					<div class="scores_table">*NOT YET*</div>
+
+					<div class="modal_buttons">
+						<div class="button" action="modal_none">Close</div>
+					</div>
+				</div>
+				<!-- #endregion -->
+				<!-- #region Modal_statistics-->
+				<div class="modal_container" id="modal_statistics">
+					<div class="modal_label">Statistics</div>
+					<div class="modal_separator"></div>
+					*NOT YET*
+					<div class="modal_buttons">
+						<div class="button" action="modal_none">Close</div>
+					</div>
+				</div>
+				<!-- #endregion -->
+				<!-- #region Modal_settings-->
+				<div class="modal_container" id="modal_settings">
+					<div class="modal_label">Settings</div>
+					<div class="modal_separator"></div>
+
+					<div class="setting_properties">
+						<!-- SCRIPT INSERTS -->
+					</div>
+
+					<div class="modal_buttons">
+						<div class="button" action="reset_all_settings">Reset</div>
+						<div class="button" action="modal_none">Close</div>
+					</div>
+				</div>
+				<!-- #endregion -->
+				<!-- #region Modal_howtoplay-->
+				<div class="modal_container" id="modal_howtoplay">
+					<div class="modal_label">How to play?</div>
+					<div class="modal_separator"></div>
+
+					<div class="howtoplay_pages" display="0">
+						<!-- #region Page 0-->
+						<div class="howtoplay_page">
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla
+							distinctio ea molestias quibusdam laboriosam non animi quis mollitia ut
+							recusandae, aliquid ipsa veniam libero corrupti! Reprehenderit vel
+							corrupti placeat autem!
+						</div>
+						<!-- #endregion -->
+						<!-- #region Page 1-->
+						<div class="howtoplay_page">page 2</div>
+						<!-- #endregion -->
+						<!-- #region Page 2-->
+						<div class="howtoplay_page">lolaosdon1o230 3</div>
+						<!-- #endregion -->
+						<!-- #region Page 3-->
+						<div class="howtoplay_page">page4</div>
+						<!-- #endregion -->
+						<!-- #region Page 4-->
+						<div class="howtoplay_page">
+							<img src="https://via.placeholder.com/200x100" />image test
+						</div>
+						<!-- #endregion -->
+					</div>
+
+					<div class="howtoplay_pagination">
+						<!-- SCRIPT INSERTS -->
+					</div>
+
+					<div class="modal_buttons">
+						<div class="button" action="howtoplay_prev">Prev</div>
+						<div class="button" action="modal_none">Close</div>
+						<div class="button" action="howtoplay_next">Next</div>
+					</div>
+				</div>
+				<!-- #endregion -->
+			</div>
+		</div>
+	</body>
+</html>

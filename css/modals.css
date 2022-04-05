@@ -1,0 +1,79 @@
+.modal_background {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	/* background: #000a; */
+	z-index: 3;
+	display: grid;
+	place-items: center;
+	pointer-events: none;
+	transition: backdrop-filter 0.5s ease;
+	backdrop-filter: brightness(0.5);
+}
+
+.modal_background[display='none'] {
+	backdrop-filter: brightness(1);
+}
+
+.modal_container {
+	--modal-background: #111;
+	--translate-y: 100vh;
+	--scale: 0;
+	position: absolute;
+	max-height: 80vh;
+	min-width: 200px;
+	border: 5px solid #222;
+	border-radius: 15px;
+	background: var(--modal-background);
+	overflow: hidden;
+
+	transform: translateY(var(--translate-y)) scale(var(--scale));
+	transition: transform 0.5s ease;
+}
+
+.modal_buttons {
+	display: flex;
+	justify-content: space-around;
+}
+
+.modal_buttons > .button {
+	text-align: center;
+	width: fit-content;
+	margin: 10px 5px;
+	padding: 5px 15px;
+	background: #222;
+	border-radius: 15px;
+	cursor: pointer;
+	transition: background 0.25s ease;
+}
+
+.modal_buttons > .button:hover {
+	background: #1b1b1b;
+}
+
+.modal_background[display='changelog'] #modal_changelog,
+.modal_background[display='scores'] #modal_scores,
+.modal_background[display='statistics'] #modal_statistics,
+.modal_background[display='settings'] #modal_settings,
+.modal_background[display='howtoplay'] #modal_howtoplay {
+	--translate-y: 0px;
+	--scale: 1;
+	pointer-events: all;
+}
+
+.modal_label {
+	font-size: 36px;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
+}
+.modal_separator {
+	height: 2px;
+	width: 80%;
+	border-radius: 50%;
+	margin: 1.5px auto;
+
+	background: radial-gradient(circle, #ffff, #fff0 100%);
+}

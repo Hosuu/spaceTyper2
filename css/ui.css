@@ -1,0 +1,157 @@
+.ui {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* #region TOP PANEL*/
+.top-panel {
+	height: 64px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	place-items: center;
+}
+
+.stat {
+	backdrop-filter: blur(4px);
+	border-radius: 24px;
+	background: #ffffff0a;
+	padding: 0px 25px;
+}
+
+.stat {
+	height: 50px;
+	overflow: hidden;
+	text-overflow: clip;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.stat_label {
+	font-size: 16px;
+	letter-spacing: 3px;
+	color: #aaa;
+	font-weight: 600;
+}
+
+.stat_value {
+	font-size: 24px;
+	color: #eee;
+	letter-spacing: 2px;
+	font-weight: 700;
+	text-align: center;
+	min-width: 80px;
+}
+
+/* #endregion */
+/* #region PROMPT*/
+.prompt_container {
+	width: 400px;
+	height: 48px;
+	align-self: center;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	backdrop-filter: blur(4px);
+	border-radius: 20px;
+	background: #ffffff0a;
+	z-index: 2;
+}
+
+.prompt_text {
+	font-size: 24px;
+	font-weight: 600;
+	height: 1em;
+}
+
+.prompt_line {
+	width: 70%;
+	height: 2px;
+	border-radius: 50%;
+	margin-top: 5px;
+	background: radial-gradient(circle, #ffff, #fff0 85%);
+}
+/* #endregion */
+/* #region BOTTOM PLANEL*/
+.bottom-panel {
+	height: 80px;
+	display: flex;
+	flex-direction: column;
+}
+
+.bottom-bar {
+	height: 32px;
+	display: grid;
+	grid-template-columns: 0 1fr 0;
+	place-items: center;
+
+	font-size: 12px;
+	padding: 0 5px;
+	color: #ccc;
+	white-space: nowrap;
+}
+
+.bottom_middle {
+	font-size: 16px;
+}
+
+.bottom-bar .button {
+	cursor: pointer;
+	transition: color 0.3s ease;
+}
+
+.bottom-bar .button:hover {
+	text-decoration: underline;
+	color: #fff;
+}
+
+.bottom-bar .button:not(:last-child) {
+	margin-right: 15px;
+	position: relative;
+}
+
+.bottom-bar .button:not(:last-child)::after {
+	content: '';
+	position: absolute;
+	right: -15px;
+	top: 50%;
+	display: block;
+	width: 5px;
+	height: 5px;
+	background: #ccc;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.bottom_left {
+	justify-self: left;
+	align-self: flex-end;
+	margin-bottom: 5px;
+	color: #aaa8;
+}
+
+.bottom_right {
+	justify-self: right;
+	align-self: flex-end;
+	margin-bottom: 5px;
+	color: #aaa8;
+}
+
+@media screen and (max-width: 600px) {
+	.bottom-bar {
+		grid-template-columns: 1fr;
+	}
+
+	.bottom_left,
+	.bottom_right {
+		display: none;
+	}
+}
+
+/* #endregion */

@@ -1,0 +1,53 @@
+.howtoplay_pagination {
+	display: flex;
+	justify-content: center;
+}
+.howtoplay_pagination > .button {
+	--scale: 1;
+	height: 10px;
+	width: 10px;
+	background: #444;
+	margin: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	transform: scale(var(--scale));
+	transition: transform 0.5s ease, background 0.5s ease;
+}
+.howtoplay_pagination > .button:hover {
+	background: #999;
+}
+.howtoplay_pagination > .button[active='true'] {
+	--scale: 1.5;
+	background: #aaa;
+}
+
+.howtoplay_pages {
+	position: relative;
+	margin: auto;
+	height: 360px;
+	width: 360px;
+}
+
+.howtoplay_page {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: transform 0.5s ease, opacity 0.5s ease;
+	transform: translateY(15px);
+
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.howtoplay_page.active {
+	transform: translateY(0px);
+	opacity: 1;
+	pointer-events: all;
+}
